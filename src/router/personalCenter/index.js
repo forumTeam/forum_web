@@ -1,5 +1,6 @@
 import Layout from '../../views/layout/Layout'
 import MyPosts from '../../views/personalCenter/MyPosts'
+import PostsDetail from '../../views/personalCenter/posts/PostsDetail'
 import AddPosts from '../../views/personalCenter/posts/AddPosts'
 import MySpace from '../../views/personalCenter/MySpace'
 import personaLinformation from '../../views/personalCenter/personaLinformation'
@@ -34,6 +35,13 @@ export default {
       hidden:true,
       meta: { title: '添加帖子' },
       component:AddPosts
+    },
+    {
+      path:'PostsDetail',
+      name:'PostsDetail',
+      hidden:true,
+      meta: { title: '帖子详情' },
+      component:PostsDetail
     }
   ]
 }

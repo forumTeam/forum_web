@@ -12,7 +12,7 @@
         <div class="clear: both;"></div>
       </div>
       <el-dropdown-menu slot="dropdown" class="user-dropdown">
-        <router-link class="inlineBlock" to="/">
+        <router-link class="inlineBlock" to="/personalCenter/personaLinformation">
           <el-dropdown-item>
             主页
           </el-dropdown-item>

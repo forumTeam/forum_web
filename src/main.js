@@ -9,12 +9,15 @@ import 'element-ui/lib/theme-chalk/index.css'
 import 'element-ui/lib/theme-chalk/display.css';
 import locale from 'element-ui/lib/locale/lang/zh-CN'
 import '@/styles/index.scss'
+import echarts from 'echarts'
 
 import App from './App'
 
 
 
 Vue.use(ElementUI, { locale })
+Vue.use(echarts)
+Vue.prototype.$echarts=echarts
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

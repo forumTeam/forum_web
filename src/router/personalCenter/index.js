@@ -14,7 +14,7 @@ export default {
     {
       path:'personaLinformation',
       name:'personaLinformation',
-      meta: { title: '个人信息' },
+      meta: { title: '我的主页' },
       component:personaLinformation
     },
     {

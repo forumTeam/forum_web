@@ -7,8 +7,8 @@
       <el-card>
         <h3>今日头条</h3>
         <el-carousel :interval="4000" type="card" height="300px" loop="true">
-          <el-carousel-item v-for="item in 6" :key="item">
-            <h3>{{ item }}</h3>
+          <el-carousel-item v-for="item in zoumaList" :key="item">
+            <h3 class="tc">{{ item.dynamicTitle }}: {{ item.dynamicContent }}</h3>
           </el-carousel-item>
         </el-carousel>
       </el-card>
@@ -34,22 +34,57 @@
 
 
 <script>
+  import BaseVue from '../../components/BaseComponents/BaseVue'
+  import {selectPosts } from '../../api/myPosts/index'
+  import {selectDynamic } from '../../api/myDynamic/index'
   export default {
-    data() {
+    extends:BaseVue,
+    data(){
       return {
-        activeNames: ['1']
-      };
+        activeNames: ['1'],
+        arr: [],
+        zoumaList: [
+          {
+            dynamicTitle: '江南一剪梅',
+            dynamicContent: '海角天涯望古都，瑶琴一把系孤独'
+          },
+          {
+            dynamicTitle: '秋物语',
+            dynamicContent: '花魂散去天涯寂，云袖飘来海角平'
+          }
+        ],
+        animate: false
+      }
     },
-    methods: {
+    created(){
+//      this.selectDynamic(1,10);
+//      this.zoumaList=this.arr;
+    },
+    methods:{
+      selectDynamic(pageIndex,pageSize){
+        this.invokeApi(selectDynamic,{
+          pageIndex,pageSize
+        }).then(response=>{
+          this.arr=response.data
+        })
+      },
       handleChange(val) {
         console.log(val);
       }
+
     }
+
   }
+
+
+
 </script>
 
 
 <style>
+  .tc{
+    text-align:center;
+  }
   .el-carousel__item h3 {
     color: #475669;
     font-size: 14px;

@@ -8,7 +8,7 @@ export default {
   path:'/personalCenter',
   name:'personalCenter',
   redirect:'/personalCenter/personaLinformation',
-  meta: { title: '个人中心', },
+  meta: { title: '一览芳华', },
   component:Layout,
   children:[
     {

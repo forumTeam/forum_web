@@ -1,16 +1,24 @@
 import request from '@/utils/request'
 
 
-export function selectDynamic({pageIndex,pageSize}) {
+export function selectDynamic({pageIndex,pageSize,pkDynamicId,dynamicTitle}) {
   return request({
     url:'dynamic/selectDynamic',
     method:'post',
     data:{
       pageIndex,
-      pageSize
+      pageSize,
+      pkDynamicId,
+      dynamicTitle
     }
   })
 }
+
+
+
+
+
+
 
 
 export function selectDynamicDetail({pkDynamicId}) {

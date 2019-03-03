@@ -6,7 +6,8 @@
               :max-height="table.maxHeight === null ? 500 : table.maxHeight"
               @select-all="selectAll"
               @selection-change="selectChange"
-              @select="select">
+              @select="select"
+              @row-dblclick="rowClick">
 
       <el-table-column
         v-if="table.multipleSelect"
@@ -78,6 +79,7 @@
         default: {
           maxHeight: 500,
           selectAll: null,
+          rowClick:null,
           selectChange: null,
           toggleRowSelection: null,
           clearSelection: null,
@@ -102,6 +104,9 @@
 
       formatterBoolean(value) {
         return value ? '是' : '否'
+      },
+      rowClick(row, column, event){
+        if (typeof  this.table.rowClick === FUNCTION ) this.table.rowClick(row, column, event)
       },
 
       formatterEnum(value, table, field) {
@@ -152,6 +157,8 @@
       selectAll(data) {
         if (typeof this.table.selectAll === FUNCTION) this.table.selectAll(data)
       },
+
+
 
       /**
        * 表格多选事件.

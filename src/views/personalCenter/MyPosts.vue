@@ -6,7 +6,7 @@
         最新战况： {{this.marqueeList[0].name}}{{this.marqueeList[0].city}}{{this.marqueeList[0].amount}}
       </el-card>
 
-      <el-card shadow="always" style="width: 60%;float: right;margin-right: 10px;margin-top: 15px;height: 930px">
+      <el-card shadow="always" style="width: 60%;float: right;margin-right: 10px;margin-top: 15px;max-height: 900px;min-height: 200px">
         <div class="inner-container">
           <p class="text" v-for="(item, index) in arr" :key="index" style="text-align: left;line-height: 50px;border-bottom: #001528 1px dashed ">
             <router-link tag='a' :to="{path:'/personalCenter/PostsDetail' , query:{pkPostsId :item.pkPostsId }}" >{{item.postsTitle}}<span style="float: right;margin-right: 50px">{{item.nickName}}</span></router-link>

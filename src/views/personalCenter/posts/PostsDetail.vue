@@ -66,8 +66,8 @@
           labelWidth: '140px',
           model: {},
           formItems: [
-            {name: 'postsTitle', label: '帖子标题', required: true, type: 'normal'},
-            {name: 'postsContent', label: '帖子内容', required: true, type: 'normal'},
+            {name: 'postsTitle', label: '帖子标题', type: 'normal'},
+            {name: 'postsContent', label: '帖子内容', type: 'normal'},
           ],
         },
         tableView: {

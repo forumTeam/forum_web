@@ -37,8 +37,8 @@ import BaseVue from '../../components/BaseComponents/BaseVue'
     data() {
       return {
         loginForm: {
-          username: 'A10000',
-          password: '123456'
+          username: '',
+          password: ''
         },
         loading: false,
         pwdType: 'password',

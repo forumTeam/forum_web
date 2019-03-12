@@ -2,11 +2,18 @@
   <el-menu class="navbar" mode="horizontal">
     <hamburger :toggle-click="toggleSideBar" :is-active="sidebar.opened" class="hamburger-container"/>
     <breadcrumb/>
+     <el-dropdown class="avatar-container" trigger="click">
+       <div class="" style="margin-right:100px;">
+        <slot>与我相关</slot>
+
+       </div>
+     </el-dropdown>
+
     <el-dropdown class="avatar-container" trigger="click">
       <div class="avatar-wrapper">
         <!-- <img :src="getImage(avatar)" class="user-avatar">-->
         <div class="avatarUserName">
-          <span>{{this.name}}</span>
+          <span>{{this.model.nickName}}</span>
           <i class="el-icon-caret-bottom"/>
         </div>
         <div class="clear: both;"></div>
@@ -31,9 +38,9 @@
   import Breadcrumb from '@/components/Breadcrumb'
   import Hamburger from '@/components/Hamburger'
   import BaseVue from '../../../components/BaseComponents/BaseVue'
-
+  import {getUserDetail} from '../../../api/personalCenter/index'
   export default {
-    extend: BaseVue,
+    extends: BaseVue,
     components: {
       Hamburger,
       Breadcrumb
@@ -45,12 +52,29 @@
         'avatar'
       ])
     },
+    mounted(){
+      this.getUserDetail()
+
+    },
+
+    data(){
+      return{
+        model:{},
+      }
+    },
     methods: {
+      getUserDetail() {
+        this.invokeApi(getUserDetail).then(response => {
+          this.model = response.data
+        })
+      },
       toggleSideBar() {
         this.$store.dispatch('ToggleSideBar')
       },
       logout() {
-        this.$store.dispatch('LogOut')
+        this.$store.dispatch('LogOut').then(()=>{
+          location.reload() // 为了重新实例化vue-router对象 避免bug
+        })
       }
     }
   }

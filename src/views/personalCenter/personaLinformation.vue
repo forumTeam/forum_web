@@ -9,7 +9,7 @@
     </el-card>
 
 
-    <el-card style="margin:1%">
+    <el-card style="margin:1%;">
       <div id="myChart" style="width: 400px;height: 300px;float: left;margin-left: 8%" ></div>
       <div id="Chart" style="width: 400px;height: 300px;float: right;margin-right: 10%"></div>
     </el-card>

@@ -51,9 +51,9 @@ const user={
     },
 
     //登出
-    LoginOut({commit , state}){
+    LogOut({commit , state}){
       return new Promise((resolve,reject)=>{
-        commit('SET_TOKEN','')
+        commit('SET_TOKEN', '')
         removeToken()
         location.reload()
       })

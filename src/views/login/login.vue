@@ -3,7 +3,7 @@
     <el-form ref="loginForm" :model="loginForm"  class="login-form" auto-complete="on" label-position="left" >
       <h3 class="title">靳旺论坛</h3>
       <el-form-item prop="username" :rules="[ { required:true,message:'账户不能为空' } ]" >
-        <el-input v-model="loginForm.username" name="username" type="text" auto-complete="on" placeholder="请输入手机号码或账户"  />
+        <el-input v-model="loginForm.username" name="username" type="text" auto-complete="on" placeholder="请输入账户"  />
       </el-form-item>
       <el-form-item prop="password"  :rules="[
            { required: true, message: '密码不能为空'},
@@ -37,8 +37,8 @@ import BaseVue from '../../components/BaseComponents/BaseVue'
     data() {
       return {
         loginForm: {
-          username: 'A10000',
-          password: '123456'
+          username: '',
+          password: ''
         },
         loading: false,
         pwdType: 'password',

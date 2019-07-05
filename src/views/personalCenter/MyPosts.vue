@@ -41,7 +41,6 @@
     components:{TableView},
     data(){
       return {
-
         arr: [],
         marqueeList: [
           {

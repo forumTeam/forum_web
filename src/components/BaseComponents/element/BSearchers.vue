@@ -5,7 +5,7 @@
     <el-form :model="searchObj" label-position="right" :label-width="searchCondition.labelWidth === null ? '50px' : searchCondition.labelWidth" :rules="searchCondition.rules">
 
       <!-- 第一个筛选条件 -->
-      <el-row :gutter="20">
+      <el-row :gutter="20" >
         <el-col v-if="searchCondition.content[0]" :span="3.5">
           <el-form-item :label-width="searchCondition.content[0].labelWidth" :prop="searchCondition.content[0].prop" :label="searchCondition.content[0].label">
             <el-input size="mini"

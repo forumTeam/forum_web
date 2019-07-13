@@ -8,6 +8,6 @@ export const Obj = {
   order: 'desc',    // 排序条件
   DESC: 'desc',    // 排序条件
   ASC: 'asc',    // 排序条件
-}
+};
 
-export const FUNCTION = 'function'
+export const FUNCTION = 'function';

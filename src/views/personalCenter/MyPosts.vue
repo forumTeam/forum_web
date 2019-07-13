@@ -34,7 +34,6 @@
   import TableView from '../../components/BaseComponents/view/TableView'
   import BaseVue from '../../components/BaseComponents/BaseVue'
   import {selectPosts } from '../../api/myPosts/index'
-  import BScroll from 'better-scroll'
   export default {
     name:'myPosts',
     extends:BaseVue,
@@ -107,6 +106,7 @@
       rowClick(row, column, event){
         alert(JSON.stringify(row))
       },
+
       selectPosts(All ,pageIndex,pageSize){
         this.invokeApi(selectPosts,{
           All ,pageIndex,pageSize
@@ -114,6 +114,8 @@
           this.arr=response.data
         })
       },
+
+
        goToAddPosts(){
          this.goto('./AddPosts')
        },

@@ -145,7 +145,7 @@
        * 分页翻页.
        */
       OnCurrentChange(val) {
-        this.page.pageIndex = val
+        this.page.pageIndex = val;
         this.invokeApi()
       },
     },

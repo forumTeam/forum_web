@@ -132,7 +132,7 @@
        * @return function
        */
       getClickEvent(method, index, row) {
-        if (method === null || typeof method !== 'function') return null
+        if (method === null || typeof method !== 'function') return null;
         return method({index, row})
       },
 

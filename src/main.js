@@ -12,7 +12,7 @@ import '@/styles/index.scss'
 import echarts from 'echarts'
 
 import App from './App'
-
+ import './permission'
 
 
 Vue.use(ElementUI, { locale })

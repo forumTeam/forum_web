@@ -3,9 +3,10 @@ import index from '../../views/gossip/index'
 export default {
   path:'/gossip',
   name:'gossip',
-  redirect:'/personalCenter/personaLinformation',
-  meta: { title: '一览芳华', },
+  redirect:'/gossip/index',
+  meta: { title: '一览芳华s', },
   component:Layout,
+  role:['admin'],
   children:[
     {
       path:'index',
@@ -13,6 +14,5 @@ export default {
       meta: { title: '聊天' },
       component:index
     },
-
   ]
 }

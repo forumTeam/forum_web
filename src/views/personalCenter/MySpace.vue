@@ -7,7 +7,7 @@
       <el-card>
         <h3>今日头条</h3>
         <el-carousel :interval="4000" type="card" height="150px" autoplay arrow="hover">
-          <el-carousel-item v-for="item in Headline" :key="item">
+          <el-carousel-item v-for="(item,index) in Headline" :key="index">
             <h3 class="tc" style="text-align: center">{{ item.dynamicTitle }}: {{ item.dynamicContent }}</h3>
           </el-carousel-item>
         </el-carousel>

@@ -10,6 +10,7 @@ export default {
   redirect:'/personalCenter/personaLinformation',
   meta: { title: '一览芳华', },
   component:Layout,
+  role:['admin'],
   children:[
     {
       path:'personaLinformation',

@@ -33,7 +33,13 @@ export function register({account,password,name,sex,nickName,qq,phone}) {
 
 export function getInfo() {
   return request({
-    url: '/client/getUserInfo',
+    url: '/user/getUserInfo',
     method: 'get'
+  })
+}
+export function getRoles() {
+  return request({
+    url: '/user/getRoles',
+    method: 'post',
   })
 }

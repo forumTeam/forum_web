@@ -1,19 +1,20 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
-Vue.use(Router)
+import notFount from '../views/404/notFount'
+Vue.use(Router);
 
 
 /* Layout */
 import personalCenter from './personalCenter'
 import gossip from './gossip'
 export const constantRouterMap = [
-  personalCenter,
   { path: '/', component: () => import('@/views/login/login'), hidden: true },
   { path: '/register', component: () => import('@/views/login/register'), hidden: true },
+  {path: '/404', name: '404', component:notFount}
 ];
 
 export const asyncRouterMap = [
+  personalCenter,
   gossip,
 ];
 

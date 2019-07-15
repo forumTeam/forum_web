@@ -10,7 +10,8 @@ import gossip from './gossip'
 export const constantRouterMap = [
   { path: '/', component: () => import('@/views/login/login'), hidden: true },
   { path: '/register', component: () => import('@/views/login/register'), hidden: true },
-  {path: '/404', name: '404', component:notFount}
+  {path: '/404', name: '404', component:notFount},
+  {path: '*', redirect:'/404'}
 ];
 
 export const asyncRouterMap = [

@@ -50,7 +50,7 @@
         this.$store.dispatch('ToggleSideBar')
       },
       logout() {
-        this.$store.dispatch('LogOut')
+        this.$store.dispatch('LoginOut')
       }
     }
   }

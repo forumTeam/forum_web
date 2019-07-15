@@ -6,7 +6,7 @@ export default {
   redirect:'/gossip/index',
   meta: { title: '一览芳华s', },
   component:Layout,
-  role:['admin'],
+  role:['dddd'],
   children:[
     {
       path:'index',

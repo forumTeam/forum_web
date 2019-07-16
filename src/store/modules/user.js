@@ -1,16 +1,19 @@
 import {getToken, setToken, removeToken} from "../../utils/auth";
 import {login, getInfo, getRoles} from "../../api/user/login"
 import {asyncRouterMap} from '../../router'
-import Router from "vue-router";
 
+/**
+ *
+ * @param route  需要的角色
+ * @param roles  拥有的角色
+ */
 function getChildren(route, roles) {
-  let rule = roles.filter(item=>{
-  for (let rou in route.role) {
-    if (roles.indexOf(item) === 0) return true
-    return false
+  for (let item of  roles) {
+    for (let role of route) {
+      if (item === role) return true
+    }
   }
-  })
-  return rule
+  return false
 }
 
 const user = {
@@ -86,17 +89,15 @@ const user = {
     filterAsyncRouter({commit, state}, res) {
       return new Promise((resolve, reject) => {
         let paths = asyncRouterMap.filter(item => {
-
-          if (!item.role || !getChildren(item, res)) return true
+          if (item.role && !getChildren(item.role, res)) return false;
           if (item.children && item.children.length > 0) {
             item.children.filter(child => {
-              if (!item.role || !getChildren(child, res)) return true
+              if (child.role && !getChildren(child.role, res)) return false
             })
-            return true
           }
           return true
-        })
-        commit('setRouters', paths)
+        });
+        commit('setRouters', paths);
         resolve(paths)
       })
     },

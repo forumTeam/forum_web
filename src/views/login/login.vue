@@ -31,6 +31,7 @@
 
 <script>
 import BaseVue from '../../components/BaseComponents/BaseVue'
+import {md5} from '../../utils/common'
   export default {
     extend:BaseVue,
     name: 'Login',
@@ -68,6 +69,7 @@ import BaseVue from '../../components/BaseComponents/BaseVue'
         this.$refs.loginForm.validate(valid => {
           if (valid) {
             this.loading = true
+              this.loginForm.password=md5(this.loginForm.password);
             this.$store.dispatch('Login', this.loginForm).then(() => {
               this.loading = false
               this.$router.push({ path: this.redirect || '/personalCenter/personaLinformation' })

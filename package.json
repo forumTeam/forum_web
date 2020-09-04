@@ -19,7 +19,7 @@
     "js-cookie": "^2.2.0",
     "js-md5": "^0.7.3",
     "js_cookie": "^1.0.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "nprogress": "^0.2.0",
     "sass-loader": "^7.1.0",
     "vue": "^2.5.2",
